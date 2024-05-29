@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "kafkajs": "^2.2.4",
+    "prisma": "^5.7.0"
+  },
+  "name": "@mainmicro/jscommonlib",
+  "version": "1.0.20",
+  "description": "common functionality for js microservices",
+  "main": "./dist/index.js",
+  "scripts": {
+    "finish": "rm -r ./dist &&tsc && npm version patch && npm publish"
+  },
+  "author": "",
+  "license": "ISC",
+  "types": "./dist/index.d.ts"
+}
