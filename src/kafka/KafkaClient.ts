@@ -10,7 +10,7 @@ class KafkaClientSingleton {
       clientId: clientId,
       brokers: [process.env.KAFKA_BROKER as string],
       retry: {
-        initialRetryTime: 300,
+        initialRetryTime: 3000,
         retries: 20,
       },
     });

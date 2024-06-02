@@ -22,70 +22,32 @@ export declare enum CartGroups {
 export interface UserCreatedEvent {
     topic: Topics.USER_CREATED;
     group: CartGroups.CART_USER_CREATED_GROUP | ProductsGroup.PRODUCT_USER_CREATED_GROUP;
-    producerMessage: {
-        id: string;
-    };
+    producerMessage: UserCreatedMessage;
 }
 export interface UserUpdatedEvent {
     topic: Topics.USER_UPDATED;
     group: CartGroups.CART_USER_UPDATED_GROUP | ProductsGroup.PRODUCT_USER_UPDATED_GROUP;
-    producerMessage: {
-        id: string;
-    };
+    producerMessage: UserUpdatedMessage;
 }
 export interface UserDeletedEvent {
     topic: Topics.USER_DELETED;
     group: CartGroups.CART_USER_DELETED_GROUP | ProductsGroup.PRODUCT_USER_DELETED_GROUP;
-    producerMessage: {
-        id: string;
-    };
+    producerMessage: UserDeletedMessage;
 }
 export interface ProductCreatedEvent {
     topic: Topics.PRODUCT_CREATED;
     group: CartGroups.CART_PRODUCT_CREATED_GROUP;
-    producerMessage: {
-        id: string;
-        title: string;
-        price: number;
-        image: string;
-        colors?: Array<{
-            name: string;
-            hex: string;
-        }>;
-        sizes?: Array<{
-            name: string;
-            abbreviation: string;
-        }>;
-        countInStock?: number;
-    };
+    producerMessage: ProductCreatedMessage;
 }
 export interface ProductUpdatedEvent {
     topic: Topics.PRODUCT_UPDATED;
     group: CartGroups.CART_PRODUCT_UPDATED_GROUP;
-    producerMessage: {
-        id: string;
-        data: {
-            title?: string;
-            price?: number;
-            image?: string;
-            colors?: Array<{
-                name: string;
-                hex: string;
-            }>;
-            sizes?: Array<{
-                name: string;
-                abbreviation: string;
-            }>;
-            countInStock?: number;
-        };
-    };
+    producerMessage: ProductUpdatedMessage;
 }
 export interface ProductDeletedEvent {
     topic: Topics.PRODUCT_DELETED;
     group: CartGroups.CART_PRODUCT_DELETED_GROUP;
-    producerMessage: {
-        id: string;
-    };
+    producerMessage: ProductDeletedMessage;
 }
 export type MainEvent = UserCreatedEvent | UserUpdatedEvent | UserDeletedEvent | ProductCreatedEvent | ProductUpdatedEvent | ProductDeletedEvent;
 export interface EventsEnum {

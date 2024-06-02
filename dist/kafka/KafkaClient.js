@@ -6,6 +6,10 @@ class KafkaClientSingleton {
         this.client = new kafkajs_1.Kafka({
             clientId: clientId,
             brokers: [process.env.KAFKA_BROKER],
+            retry: {
+                initialRetryTime: 3000,
+                retries: 20,
+            },
         });
     }
     static getInstance(clientId) {
